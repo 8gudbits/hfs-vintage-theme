@@ -275,6 +275,17 @@ input[type=range] {
     position: relative;
 }
 
+/* Range input labels */
+input[type=range]::before,
+input[type=range]::after {
+    display: inline;
+    position: absolute;
+    font-size: 10px;
+    top: 10px;
+    font-family: monospace;
+    color: #2d501c;
+}
+
 /* Webkit-specific range slider track */
 input[type=range]::-webkit-slider-runnable-track {
     background: #d0d0d0;
@@ -508,7 +519,7 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none; /* Remove underline on hover */
     color: #2d501c;
 }
 
@@ -656,5 +667,69 @@ input {
     color: #2d501c;
     font-size: 14px;
     image-rendering: pixelated; /* Consistent pixelated rendering */
+}
+
+/* ===== RESPONSIVE MOBILE STYLES ===== */
+
+/* Desktop icon sizing - slightly smaller icons */
+@media (min-width: 673px) {
+    .hide-back .greensteam-button .icon,
+    .upload-toolbar .greensteam-button .icon,
+    .hide-back button .icon,
+    .upload-toolbar button .icon,
+    .breadcrumb .icon {
+        width: 14px !important;
+        height: 14px !important;
+        font-size: 12px !important;
+    }
+}
+
+/* Mobile styles for screens up to 672px */
+@media (max-width: 672px) {
+    .hide-back .greensteam-button .icon,
+    .upload-toolbar .greensteam-button .icon,
+    .hide-back button .icon,
+    .upload-toolbar button .icon {
+        width: 16px !important;
+        height: 16px !important;
+        font-size: 14px !important;
+        max-width: 16px !important;
+        max-height: 16px !important;
+    }
+    
+    .breadcrumb .icon {
+        width: 16px !important;
+        height: 16px !important;
+        font-size: 14px !important;
+        max-width: 16px !important;
+        max-height: 16px !important;
+    }
+    
+    .greensteam-button,
+    button {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .greensteam-button .button-text,
+    button .button-text {
+        display: none !important; /* Hide button text, show only icons on mobile */
+    }
+}
+
+/* Small mobile devices for screens up to 480px */
+@media (max-width: 480px) {
+    .hide-back .greensteam-button .icon,
+    .upload-toolbar .greensteam-button .icon,
+    .hide-back button .icon,
+    .upload-toolbar button .icon,
+    .breadcrumb .icon {
+        width: 14px !important;
+        height: 14px !important;
+        font-size: 12px !important;
+        max-width: 14px !important;
+        max-height: 14px !important;
+    }
 }
 
